@@ -363,7 +363,7 @@ section {
 @media (max-width: 767px) {
   .drawing-board {
     height: calc(100vh - 40px);
-    position: relative;
+
   }
 }
 
