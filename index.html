@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Drawing App JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script> -->
+    <script src="tf_min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script> -->
+    <script src="teachablemachine-image_min.js"></script>
+</head>
+
+<body>
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <div class="overlay"></div>
+        <div class="intro">
+            <h1>welcome to <span>Drawing</span> App </h1>
+            <p>This App Is specially produced to learn kids Draw simple shapes like:<br><img src="icons/circle.svg"
+                    alt="">
+                Circles, <img src="icons/rectangle.svg" alt=""> Rectangles, <img src="icons/triangle.svg" alt="">
+                Triangles, And
+                More...
+            </p>
+            <button class="start">Start</button>
+        </div>
+    </div>
+
+    <!-- Question Message -->
+    <!-- <div class="question-message">
+        <h2>Draw A Circle</h2>
+        <img src="icons/circle.svg" alt="">
+    </div> -->
+    <div class="container">
+        <div class="burger-icon">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <section class="tools-board">
+            <div class="row">
+                <label class="title">Shapes</label>
+                <ul class="options">
+                    <li class="option tool" id="rectangle">
+                        <img src="icons/rectangle.svg" alt="">
+                        <span>Rectangle</span>
+                    </li>
+                    <li class="option tool" id="circle">
+                        <img src="icons/circle.svg" alt="">
+                        <span>Circle</span>
+                    </li>
+                    <li class="option tool" id="triangle">
+                        <img src="icons/triangle.svg" alt="">
+                        <span>Triangle</span>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill-color">Fill color</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <label class="title">Options</label>
+                <ul class="options">
+                    <li class="option active tool" id="brush">
+                        <img src="icons/brush.svg" alt="">
+                        <span>Brush</span>
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <img src="icons/eraser.svg" alt="">
+                        <span>Eraser</span>
+                    </li>
+                    <li class="option">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+            <div class="row colors">
+                <label class="title">Colors</label>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option selected"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#4A98F7">
+                    </li>
+                </ul>
+            </div>
+            <div class="row buttons">
+                <button class="clear-canvas">Clear Canvas</button>
+                <button class="predee">Test</button>
+            </div>
+        </section>
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
+        <!-- <div class="show-image"><img src="" alt="" srcset=""></div> -->
+
+    </div>
+    <!-- <div class="wrapper">
+        <input class="start-now" type="file" onchange="init()">
+        
+        <div id="webcam-container">
+            <img src="" alt="" srcset="">
+        </div>
+        <div id="label" class="label">
+            <ul>
+                <li>circle:<progress id="circle-progress" max="1"></progress><span id="circle"></span></li>
+                <li>rectangle:<progress id="rectangle-progress" max="1"></progress><span id="rectangle"></span></li>
+            </ul>
+        </div>
+
+    </div> -->
+    <!-- <button class="predee">prediction</button>
+    <button class="press">presssss</button> -->
+    <img id="hi" src="" alt="">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script> -->
+    <!-- <script src="tf_min.js"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script> -->
+    <!-- <script src="teachablemachine-image_min.js"></script> -->
+
+    <script src="script.js"></script>
+    <script src="predict.js"></script>
+    <!-- <div class="prediction-result">
+        <div class="content">
+            <h2>Great! You Did it </h2>
+            <button class="try-btn">Try Again</button>
+        </div>
+    </div> -->
+</body>
+
+</html>
+
+</html>

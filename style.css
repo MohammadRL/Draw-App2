@@ -1,0 +1,414 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #4A98F7;
+}
+
+@media (max-width: 767px) {
+  body {
+    display: block;
+    height: 100vh;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  max-width: 1050px;
+}
+
+@media (max-width:767px) {
+  .container {
+    display: block;
+  }
+}
+
+/* Welcome Message */
+.welcome-message {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.welcome-message .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(24 13 24 / 94%);
+}
+
+.welcome-message .intro {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.welcome-message .intro h1 {
+  margin: 10px auto;
+  font-size: 40px;
+}
+
+.welcome-message .intro h1 span {
+  font-family: cursive;
+  font-style: italic;
+  color: rosybrown;
+}
+
+.welcome-message .intro p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.welcome-message .intro p img {
+  width: 18px;
+}
+
+.welcome-message .start {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  margin-top: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.welcome-message .start:hover {
+  background-color: rgba(188, 143, 143, 0.473);
+}
+
+/* Choose Message */
+.choose-message {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.choose-message h2 {
+
+  cursor: pointer;
+  transition: .5s;
+}
+
+.choose-message h2:hover {
+  transform: translateY(-10px);
+
+}
+
+body>img {
+  display: none;
+}
+
+section {
+  background: #fff;
+  border-radius: 7px;
+}
+
+/* burger-icon */
+.burger-icon {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 4;
+  }
+
+  .burger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: #080707;
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: .5s;
+
+  }
+
+  .burger-icon span:first-of-type {
+    top: 0;
+  }
+
+  .burger-icon span:nth-of-type(2) {
+    top: 50%;
+  }
+
+  .burger-icon span:last-of-type {
+    top: 100%;
+
+  }
+
+  .burger-icon.active span:first-of-type {
+    top: 50%;
+    transform: rotate(-45deg);
+    height: 5px;
+  }
+
+  .burger-icon.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .burger-icon.active span:last-of-type {
+    top: 50%;
+    transform: rotate(45deg);
+    height: 5px;
+  }
+}
+
+.tools-board {
+  width: 210px;
+  padding: 15px 22px 0;
+}
+
+@media (max-width: 767px) {
+  .tools-board {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+  }
+
+  .tools-board.active {
+    display: block;
+    animation: move .5s;
+    box-shadow: 5px 0 10px #EEE;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.tools-board .row {
+  margin-bottom: 20px;
+}
+
+.row .options {
+  list-style: none;
+  margin: 10px 0 0 5px;
+}
+
+.row .options .option {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option:is(:hover, .active) img {
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.option :where(span, label) {
+  color: #5A6168;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.option:is(:hover, .active) :where(span, label) {
+  color: #4A98F7;
+}
+
+.option #fill-color {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+
+#fill-color:checked~label {
+  color: #4A98F7;
+}
+
+.option #size-slider {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+
+.colors .options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colors .option {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+}
+
+.colors .option:nth-child(1) {
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+}
+
+.colors .option:nth-child(2) {
+  background-color: #000;
+}
+
+.colors .option:nth-child(3) {
+  background-color: #E02020;
+}
+
+.colors .option:nth-child(4) {
+  background-color: #6DD400;
+}
+
+.colors .option:nth-child(5) {
+  background-color: #4A98F7;
+}
+
+.colors .option.selected::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+}
+
+.colors .option:first-child.selected::before {
+  border-color: #ccc;
+}
+
+.option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.buttons button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  font-size: 0.9rem;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons .clear-canvas {
+  color: #6C757D;
+  border: 1px solid #6C757D;
+  transition: all 0.3s ease;
+}
+
+.clear-canvas:hover {
+  color: #fff;
+  background: #6C757D;
+}
+
+.buttons .predee {
+  background: #4A98F7;
+  border: 1px solid #4A98F7;
+}
+
+.drawing-board {
+  flex: 1;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .drawing-board {
+    height: calc(100vh - 40px);
+  }
+}
+
+.drawing-board canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Predicition Result */
+.prediction-result {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.616);
+
+}
+
+.prediction-result .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .prediction-result .content {
+    font-size: 20px;
+  }
+}
+
+.prediction-result button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: .5s;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+
+}
+
+.prediction-result button:hover {
+  background-color: rosybrown;
+}
