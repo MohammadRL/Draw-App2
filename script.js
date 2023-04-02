@@ -6,19 +6,19 @@ let shapes;
 let rand = Math.floor(Math.random() * shapeArr.length);
 
 console.log(rand);
-startBtn.onclick = () => {
-    startBtn.parentElement.remove();
-    drawQuestion();
-    let h2Choice = document.querySelector(".choose-message h2");
+// startBtn.onclick = () => {
+//     startBtn.parentElement.remove();
+//     drawQuestion();
+//     let h2Choice = document.querySelector(".choose-message h2");
 
-    if (rand === 0) {
-        circleChoice(h2Choice);
-    }
-    else {
-        rectangleChoice(h2Choice);
-    }
-    // shapeArr.splice(rand, 1);
-}
+//     if (rand === 0) {
+//         circleChoice(h2Choice);
+//     }
+//     else {
+//         rectangleChoice(h2Choice);
+//     }
+//     // shapeArr.splice(rand, 1);
+// }
 function afterChoose() {
     welcomeSection.remove();
 }
@@ -174,13 +174,14 @@ clearCanvas.addEventListener("click", () => {
     setCanvasBackground();
 });
 
-// saveImg.addEventListener("click", () => {
-//     const link = document.createElement("a"); // creating <a> element
-//     link.download = `${Date.now()}.jpg`; // passing current date as link download value
-//     link.href = canvas.toDataURL(); // passing canvasData as link href value
-//     link.click(); // clicking link to download image
-//     // showImage.src = link.href;
-// });
+saveImg.addEventListener("click", () => {
+    const link = document.createElement("a"); // creating <a> element
+    link.download = `${Date.now()}.jpg`; // passing current date as link download value
+    link.href = canvas.toDataURL(); // passing canvasData as link href value
+    link.click(); // clicking link to download image
+    // showImage.src = link.href;
+    console.log("hi");
+});
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);

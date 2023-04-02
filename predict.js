@@ -94,19 +94,19 @@ function executionPred() {
     setTimeout(predict, 1);
 }
 
-predBtn.onclick = () => {
-    // predict();
-    executionPred();
-}
+// predBtn.onclick = () => {
+//     // predict();
+//     executionPred();
+// }
 function circleChoice(el) {
 
     el.addEventListener("click", () => {
 
         afterChoose();
-        predBtn.onclick = () => {
-            // predict();
-            executionPred();
-        }
+        // predBtn.onclick = () => {
+        //     // predict();
+        //     executionPred();
+        // }
     });
 }
 function rectangleChoice(el) {
@@ -114,10 +114,10 @@ function rectangleChoice(el) {
     el.addEventListener("click", () => {
 
         afterChoose();
-        predBtn.onclick = () => {
-            // predict();
-            executionPred();
-        }
+        // predBtn.onclick = () => {
+        //     // predict();
+        //     executionPred();
+        // }
     });
 }
 console.log();
